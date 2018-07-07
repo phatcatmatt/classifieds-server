@@ -1,0 +1,19 @@
+type Listing @model {
+  id: ID! @isUnique
+  title: String!
+  category: String!
+  price: Float!
+  zip: Int!
+  description: String! 
+  # author: User! @relation(name: "ListingAuthor")
+  createdAt: DateTime!
+
+}
+
+
+type User @model {
+  id: ID! @isUnique
+  firstName: String!
+  email: String! @isUnique
+  # listings: [Listing!]! @relation(name: "ListingAuthor")
+}
